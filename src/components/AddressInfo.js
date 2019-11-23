@@ -3,7 +3,7 @@ import './Forms'
 import ErrorMessage from './ErrorMessage'
 import './AddressInfo.css'
 
-export default function AddressInfo() {
+export default function AddressInfo({nextStep}) {
   const [city, setCity] = React.useState('')
   const onChangeCity = event => {
     setCity(event.target.value)
@@ -62,11 +62,7 @@ export default function AddressInfo() {
       </div>
     )
   }
-
-  const onClickSubmit = () => {
-    console.log('Clicked submit button!')
-  }
-
+  
   return (
     <div>
       <h3>Address Info</h3>
@@ -107,7 +103,7 @@ export default function AddressInfo() {
       <div className='FormSubmit'>
       <button
         className='FormSubmit-Button'
-        onClick={onClickSubmit}
+        onClick={() => nextStep({ city: city, province: province })}
         disabled={!city || !province}
       >
         Continue

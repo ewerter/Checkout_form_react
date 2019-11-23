@@ -59,15 +59,11 @@ function useTextInputState() {
     onChange,
   }
 }
-export default function BasicInfo() {
+export default function BasicInfo({nextStep}) {
   const firstNameState = useTextInputState()
   const lastNameState = useTextInputState()
   const [diet, setDiet] = React.useState(null)
   const onChangeDiet = event => setDiet(event.target.value)
-
-  const onClickSubmit = () => {
-    console.log('Clicked submit button!')
-  }
 
   return (
     <div>
@@ -112,7 +108,7 @@ export default function BasicInfo() {
       <div className='FormSubmit'>
         <button
           className='FormSubmit-Button'
-          onClick={onClickSubmit}
+          onClick={() => nextStep({ firstName: firstNameState.value, lastName: lastNameState.value, diet: diet })}
           disabled={!firstNameState.value || !lastNameState.value}
         >
           Continue
