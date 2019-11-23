@@ -3,7 +3,7 @@ import './Forms'
 import './Payment.css'
 import ErrorMessage from './ErrorMessage'
 
-export default function Payment({nextStep}) {
+export default function Payment() {
   const [termsAgreed, setTermsAgreed] = React.useState('')
   const onChangeTerms = event => {
     setTermsAgreed(event.target.checked)
@@ -61,7 +61,9 @@ export default function Payment({nextStep}) {
     )
   }
 
-
+  const onClickSubmit = () => {
+    console.log('Clicked submit button!')
+  }
 
   return (
     <div>
@@ -128,7 +130,7 @@ export default function Payment({nextStep}) {
       <div className='FormSubmit'>
         <button
           className='FormSubmit-Button'
-          onClick={() => nextStep({ payment: payment, termsAgreed: termsAgreed })}
+          onClick={onClickSubmit}
           disabled={!termsAgreed || !payment || !isOnline}
         >
           
