@@ -1,0 +1,72 @@
+/* FormField */
+
+.FormField {
+  margin-bottom: 20px;
+}
+
+.FormField-Heading {
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.FormField-Label {
+}
+.FormField-Label__Radio {
+  margin-right: 10px;
+}
+
+.FormField-LabelText {
+  display: inline-flex;
+  padding-bottom: 8px;
+}
+.FormField-LabelText__Radio {
+  padding-bottom: 0;
+}
+
+.FormField-Input {
+}
+.FormField-Input__Text {
+  width: 100%;
+  height: 40px;
+
+  font: inherit;
+
+  padding: 0 12px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+.FormField-Input__Checkbox,
+.FormField-Input__Radio {
+  margin-right: 5px;
+}
+
+/* FormSubmit */
+
+.FormSubmit {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 40px;
+}
+
+.FormSubmit-Button {
+  height: 40px;
+  padding: 0 20px;
+
+  background-color: #0069ce;
+  border: 0;
+  border-radius: 5px;
+
+  font: inherit;
+  font-weight: bold;
+  color: white;
+}
+.FormSubmit-Button:hover {
+  background-color: #00499e;
+  cursor: pointer;
+}
+.FormSubmit-Button[disabled] {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
